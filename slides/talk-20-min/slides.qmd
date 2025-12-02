@@ -1,7 +1,7 @@
 ---
 title: "Skrub"
 title-block-banner: true
-date: 2025-11-18
+date: 2025-12-02
 subtitle: "Machine learning with dataframes"
 author: "Riccardo Cappuzzo"
 institute: "Inria P16"
@@ -84,5 +84,7 @@ params:
 {{< include /includes/talk-sections/_powerpuff.md >}}
 
 {{< include /includes/talk-sections/_getting_involved.md >}}
+
+{{< include /includes/talk-sections/_future_developments.md >}}
 
 {{< include /includes/talk-sections/_tldw.md >}}

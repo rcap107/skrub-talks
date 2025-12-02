@@ -10,4 +10,5 @@ Each node:
 
 - Shows a preview of the data resulting from the operation
 - Reports the location in the code where the code is defined
-- Shows the run time of the node 
+- Can include node names and descriptions
+- Shows the run time of each node 

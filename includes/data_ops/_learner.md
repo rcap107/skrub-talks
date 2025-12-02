@@ -1,6 +1,5 @@
 ## Exporting the plan in a `learner` {.smaller}
-The **Learner** is a stand-alone object that works like
-a scikit-learn estimator that takes a dictionary as input rather
+The **Learner** is an estimator that takes a dictionary as input rather
 than just `X` and `y`. 
 
 

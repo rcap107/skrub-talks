@@ -1,10 +1,10 @@
-## DataOps...
+## Skrub DataOps...
 
 ::: {.incremental}
-- Extend the `scikit-learn` machinery to complex multi-table operations 
+- Extend the `scikit-learn` machinery to multi-table operations 
 - Take care of data leakage
 - Track all operations with a computational graph (a *Data Ops plan*)
-- Allow tuning any operation in the Data Ops plan
+- Allow tuning any operation in the plan
 - Can be persisted and shared easily 
 :::
 

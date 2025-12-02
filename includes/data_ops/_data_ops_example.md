@@ -16,7 +16,7 @@ y = baskets["fraud_flag"].skb.mark_as_y()
 - Skrub tracks `X` and `y` so that training and test splits are never mixed. 
 
 ## Applying a transformer {auto-animate="true"}
-```{python code-line-numbers="10-18|"}
+```{python}
 # | echo: true
 from skrub import selectors as s
 

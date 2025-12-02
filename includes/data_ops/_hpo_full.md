@@ -1,11 +1,3 @@
-## Hyperparameter tuning in a Data Ops plan 
-Skrub implements four `choose_*` functions:
-
-- `choose_from`: select from the given list of options
-- `choose_int`: select an integer within a range
-- `choose_float`: select a float within a range
-- `choose_bool`: select a bool 
-- `optional`: chooses whether to execute the given operation
 
 
 ## Tuning in `scikit-learn` can be complex {.smaller auto-animate="true"}
@@ -72,3 +64,12 @@ search = regressor.skb.make_randomized_search(
 # save the best learner
 best_learner = search.best_learner_
 ```
+
+## Hyperparameter tuning in a Data Ops plan 
+Skrub implements four `choose_*` functions:
+
+- `choose_from`: select from the given list of options
+- `choose_int`: select an integer within a range
+- `choose_float`: select a float within a range
+- `choose_bool`: select a bool 
+- `optional`: chooses whether to execute the given operation

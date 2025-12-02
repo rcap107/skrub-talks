@@ -1,0 +1,6 @@
+## Coming soon...
+- Optuna (in the next release!)
+- More timeseries preprocessing (including sessionization)
+- mlflow
+- DBMS support 
+- ... 
