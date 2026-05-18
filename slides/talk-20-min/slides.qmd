@@ -15,6 +15,7 @@ format:
         theme: simple
         logo: images/skrub.svg
         css: style.css
+        progress: true
         footer: "https://skrub-data.org/skrub-materials/"
 incremental: false
 params: 
@@ -29,13 +30,47 @@ params:
 
 {{< include /includes/talk-sections/_example_pipeline.md >}}
 
+## The pipeline {background-image="images/pipeline.svg" background-size="auto 90%" background-position="center center" background-repeat="no-repeat"}
+
 {{< include /includes/preparation/_exploring_base.md >}}
 
 {{< include /includes/preparation/_table_report.md >}}
 
+## Step: Drop invalid data --- `Cleaner` {.smaller}
+
+:::: {.columns}
+::: {.column width="35%"}
+<div style="position: relative;">
+  <img src="images/pipeline.svg" style="width: 100%; filter: opacity(0.15);" alt="">
+  <img src="images/pipeline.svg" style="position: absolute; top: 0; left: 0; width: 100%; clip-path: inset(14% 0% 77% 0%);" alt="">
+</div>
+:::
+::: {.column width="65%"}
+
+Skrub's **`Cleaner`** removes and repairs invalid rows before splitting features from target.
+
+:::
+::::
+
 {{< include /includes/preparation/_data_cleaning_base.md >}}
 
 {{< include /includes/preparation/_data_cleaning_skrub.md >}}
+
+## Step: Transformer {.smaller}
+
+:::: {.columns}
+::: {.column width="35%"}
+<div style="position: relative;">
+  <img src="images/pipeline.svg" style="width: 100%; filter: opacity(0.15);" alt="">
+  <img src="images/pipeline.svg" style="position: absolute; top: 0; left: 0; width: 100%; clip-path: inset(61% 0% 28% 0%);" alt="">
+</div>
+:::
+::: {.column width="65%"}
+
+Encoding dates, scaling numerics, encoding categoricals — all through skrub's column transformers.
+
+:::
+::::
 
 {{< include /includes/encoders/_datetimes_base.md >}}
 
@@ -54,6 +89,22 @@ params:
 ## Column transformations with `ApplyToCols` {.smaller auto-animate="true"}
 
 ![](/images/ApplyToCols.png){fig-align="center"}
+
+## Step: Predictor {.smaller}
+
+:::: {.columns}
+::: {.column width="35%"}
+<div style="position: relative;">
+  <img src="images/pipeline.svg" style="width: 100%; filter: opacity(0.15);" alt="">
+  <img src="images/pipeline.svg" style="position: absolute; top: 0; left: 0; width: 100%; clip-path: inset(78% 0% 13% 0%);" alt="">
+</div>
+:::
+::: {.column width="65%"}
+
+Assembling the full scikit-learn pipeline with a final estimator.
+
+:::
+::::
 
 {{< include /includes/encoders/_tabular_pipeline_short.md >}}
 
