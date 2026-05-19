@@ -6,8 +6,8 @@
 <script src="slides_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="slides_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="slides_files/libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.25">
+<link href="slides_files/libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.37">
 
   <meta name="author" content="Riccardo Cappuzzo, Jérôme Dockès">
   <meta name="dcterms.date" content="2026-05-28">
@@ -18,6 +18,9 @@
   <link rel="stylesheet" href="slides_files/libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="slides_files/libs/revealjs/dist/reveal.css">
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -96,7 +99,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-0fde88a82f0356838740f155f1088782.css">
+  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-0427d8d92a431aa6a6430e53ec02a470.css">
   <link rel="stylesheet" href="style.css">
   <link href="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -221,20 +224,8 @@ Riccardo Cappuzzo, Jérôme Dockès
 <section>
 <section id="what-is-skrub" class="title-slide slide level1 center">
 <h1>What is skrub?</h1>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Tip</strong></p>
-</div>
-<div class="callout-content">
 <p>Skrub is a Python library that sits between data stored in dataframes and machine learning with scikit-learn.</p>
-</div>
-</div>
-</div>
-<p>Skrub eases machine learning with dataframes.</p>
+<p>Skrub eases preprocessing and machine learning with dataframes.</p>
 </section>
 <section id="section" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
@@ -247,7 +238,7 @@ Riccardo Cappuzzo, Jérôme Dockès
 <section id="skrub-compatibility" class="slide level2">
 <h2>Skrub compatibility</h2>
 <ul>
-<li>Skrub is mostly written in Python, but it inlcudes some Javascript</li>
+<li>Skrub is mostly written in Python, but it includes some Javascript</li>
 <li>Skrub is fully compatible with pandas and polars
 <ul>
 <li>Any feature needs to be supported by both libraries</li>
@@ -271,18 +262,9 @@ Riccardo Cappuzzo, Jérôme Dockès
 <li>Export and share the report as an <code>HTML</code> file</li>
 </ul>
 </section>
-<section id="skrub.tablereport-1" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title"><code>skrub.TableReport</code></h2>
-<ul>
-<li>The report uses uses Jinjia templates and Javascript for interactivity</li>
-<li>The backend is in Python</li>
-<li>Space is limited, need to maximize information density.</li>
-<li>Lightweight, reliable &gt; more features (no plotly)</li>
-</ul>
-</section>
 <section id="data-cleaning-with-pandaspolars-setup" class="slide level2 smaller" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Data cleaning with pandas/polars: setup</h2>
-<div id="576ea1f7" class="cell" data-execution_count="1">
+<div id="703b14d1" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb2-1" class="hljs-ln-code"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb2-2" class="hljs-ln-code"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-3" class="hljs-ln-code"><a href=""></a></span>
@@ -362,7 +344,7 @@ Riccardo Cappuzzo, Jérôme Dockès
 </section>
 <section id="nulls-datetimes-constant-columns-with-pandaspolars" class="slide level2 smaller" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Nulls, datetimes, constant columns with pandas/polars</h2>
-<div id="447a7328" class="cell" data-execution_count="2">
+<div id="7a5a54b2" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb3-1" class="hljs-ln-code"><a href=""></a><span class="co"># Parse the datetime strings with a specific format</span></span>
 <span id="cb3-2" class="hljs-ln-code"><a href=""></a>df_pd[<span class="st">'Date'</span>] <span class="op">=</span> pd.to_datetime(df_pd[<span class="st">'Date'</span>], <span class="bu">format</span><span class="op">=</span><span class="st">'</span><span class="sc">%d</span><span class="st"> %b %Y'</span>)</span>
 <span id="cb3-3" class="hljs-ln-code"><a href=""></a></span>
@@ -384,7 +366,7 @@ Riccardo Cappuzzo, Jérôme Dockès
 </section>
 <section id="skrub.cleaner" class="slide level2 smaller" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"><code>skrub.Cleaner</code></h2>
-<div id="fae10ce0" class="cell" data-execution_count="3">
+<div id="b2f737f0" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb4-1" class="hljs-ln-code"><a href=""></a><span class="im">from</span> skrub <span class="im">import</span> Cleaner</span>
 <span id="cb4-2" class="hljs-ln-code"><a href=""></a>cleaner <span class="op">=</span> Cleaner(drop_if_constant<span class="op">=</span><span class="va">True</span>, datetime_format<span class="op">=</span><span class="st">'</span><span class="sc">%d</span><span class="st"> %b %Y'</span>)</span>
 <span id="cb4-3" class="hljs-ln-code"><a href=""></a>df_cleaned <span class="op">=</span> cleaner.fit_transform(df_pd)</span>
@@ -442,29 +424,30 @@ Riccardo Cappuzzo, Jérôme Dockès
 </section>
 <section id="encoding-all-the-features-tablevectorizer" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Encoding <em>all the features</em>: <code>TableVectorizer</code></h2>
-<div id="8ddf4983" class="cell" data-execution_count="4">
+<div id="ebe498e5" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb5-1" class="hljs-ln-code"><a href=""></a><span class="im">from</span> skrub <span class="im">import</span> TableVectorizer</span>
 <span id="cb5-2" class="hljs-ln-code"><a href=""></a></span>
 <span id="cb5-3" class="hljs-ln-code"><a href=""></a>table_vec <span class="op">=</span> TableVectorizer()</span>
 <span id="cb5-4" class="hljs-ln-code"><a href=""></a>df_encoded <span class="op">=</span> table_vec.fit_transform(df_pd)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<p>The <code>TableVectorizer</code>:</p>
 <ul>
-<li>Apply the <code>Cleaner</code> to all columns</li>
-<li>Split columns by dtype and # of unique values</li>
-<li>Encode each column separately</li>
+<li>Applies the <code>Cleaner</code> to all columns</li>
+<li>Splits columns by dtype and # of unique values</li>
+<li>Encodes each column according to its characteristics</li>
 </ul>
 </section>
 <section id="encoding-all-the-features-tablevectorizer-1" class="slide level2 smaller" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Encoding <em>all the features</em>: <code>TableVectorizer</code></h2>
 
-<img data-src="images/skrub-table-vectorizer.png" class="r-stretch"></section>
+<img data-src="../../images/skrub-table-vectorizer.png" class="r-stretch"></section>
 <section id="build-a-predictive-pipeline-with-tabular_pipeline" class="slide level2 smaller" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Build a predictive pipeline with <code>tabular_pipeline</code></h2>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb6-1" class="hljs-ln-code"><a href=""></a><span class="im">import</span> skrub</span>
 <span id="cb6-2" class="hljs-ln-code"><a href=""></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> Ridge</span>
 <span id="cb6-3" class="hljs-ln-code"><a href=""></a>model <span class="op">=</span> skrub.tabular_pipeline(Ridge())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
-<img data-src="images/skrub-tabular-pipeline-linear-model.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="../../images/skrub-tabular-pipeline-linear-model.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="encoding-all-the-features-under-the-hood" class="slide level2">
 <h2>Encoding <em>all the features</em>: under the hood</h2>
 <ul>
@@ -474,20 +457,13 @@ Riccardo Cappuzzo, Jérôme Dockès
 <li><code>TextEncoder</code>: encode text and strings using pre-trained language models</li>
 </ul>
 </section></section>
-<section>
-<section id="resources-and-contacts" class="title-slide slide level1 center">
+<section id="resources-and-contacts" class="title-slide slide level1 smaller center">
 <h1>Resources and contacts</h1>
-
-</section>
-<section id="examples-and-guides" class="slide level2">
-<h2>Examples and guides</h2>
+<p>Do you want to learn more?</p>
 <ul>
-<li><p>Skrub <a href="https://skrub-data.org/stable/auto_examples/data_ops/index.html">example gallery</a></p></li>
-<li><p>Skrub <a href="https://skrub-data.org/stable/documentation.html">user guide</a></p></li>
-<li><p><a href="https://github.com/skrub-data/EuroSciPy2025">Tutorial</a> on timeseries forecasting at Euroscipy 2025 ## Getting involved {.smaller} ::: {.nonincremental} Do you want to learn more?</p></li>
-<li><p><a href="https://skrub-data.org/stable/">Skrub website</a></p></li>
-<li><p><a href="https://skrub-data.org/skrub-materials/index.html">Skrub materials website</a></p></li>
-<li><p><a href="https://discord.gg/ABaPnm7fDC">Discord server</a></p></li>
+<li><a href="https://skrub-data.org/stable/">Skrub website</a></li>
+<li><a href="https://skrub-data.org/skrub-materials/index.html">Skrub materials website</a> (for talks)</li>
+<li><a href="https://discord.gg/ABaPnm7fDC">Discord server</a></li>
 </ul>
 <p>Follow skrub on:</p>
 <ul>
@@ -496,17 +472,18 @@ Riccardo Cappuzzo, Jérôme Dockès
 </ul>
 <p>Star skrub on GitHub, or contribute directly:</p>
 <ul>
-<li><a href="https://github.com/skrub-data/skrub/">GitHub repository</a> :::</li>
+<li><a href="https://github.com/skrub-data/skrub/">GitHub repository</a></li>
 </ul>
-</section></section>
+</section>
+
 <section>
 <section id="contributing-to-skrub-preparation" class="title-slide slide level1 center">
 <h1>Contributing to skrub: preparation</h1>
-<p>Instructions are also available in the Installation page of the webiste: <code>https://skrub-data.org/stable/install.html</code></p>
+<p>Instructions are also available in the <a href="https://skrub-data.org/stable/install.html">Installation page</a></p>
 </section>
 <section id="setting-up-the-repository" class="slide level2 smaller">
 <h2>Setting up the repository</h2>
-<p>First off, you need to fork the skrub repository: <code>https://github.com/skrub-data/skrub/fork</code></p>
+<p>First off, you need to fork the skrub <a href="https://github.com/skrub-data/skrub/fork">repository</a></p>
 <p>Then, clone the repo on your local machine</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource sh number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href=""></a><span class="fu">git</span> clone https://github.com/<span class="op">&lt;</span>YOUR_USERNAME<span class="op">&gt;</span>/skrub</span>
 <span id="cb7-2"><a href=""></a><span class="bu">cd</span> skrub</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -565,7 +542,7 @@ Riccardo Cappuzzo, Jérôme Dockès
 </div>
 <div id="tabset-1-4">
 <ul>
-<li>Install pixi: <code>https://pixi.sh/latest/installation/</code></li>
+<li>Install pixi from the <a href="https://pixi.sh/latest/installation/">pixi homepage</a></li>
 <li>Go to the skrub folder</li>
 <li>Install an environment:</li>
 </ul>
@@ -611,7 +588,7 @@ Riccardo Cappuzzo, Jérôme Dockès
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode numberSource sh number-lines code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href=""></a><span class="ex">pytest</span> <span class="at">--pyargs</span> skrub</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-2-2">
-<p>Run all tests (you will be prompted to choose an env):</p>
+<p>Run all tests (you will be prompted to choose an env, you can pick dev):</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource sh number-lines code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href=""></a><span class="ex">pixi</span> run test</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Run tests in a specific env</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode numberSource sh number-lines code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href=""></a><span class="ex">pixi</span> run <span class="at">-e</span> dev test</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -666,36 +643,67 @@ Riccardo Cappuzzo, Jérôme Dockès
 </section>
 <section id="writing-an-example" class="slide level2">
 <h2>Writing an example</h2>
-<p>Full guide: <code>https://skrub-data.org/stable/tutorial_example.html</code></p>
+<ul>
+<li>Examples are python scripts placed in the <code>examples/</code> folder.</li>
+<li>The narrative of the examples should be written in comments and can include RST syntax.</li>
+<li>Before commmitting, the documentation should be built (at least in <code>quick</code> mode) to check that the example is being rendered correctly.</li>
+</ul>
+<p><a href="https://skrub-data.org/stable/tutorial_example.html">Full guide</a></p>
 </section>
 <section id="opening-a-pr-and-contributing-upstream" class="slide level2 smaller">
 <h2>Opening a PR and contributing upstream</h2>
-<p>More detail is available on the main website: <code>https://skrub-data.org/stable/CONTRIBUTING.html</code></p>
+<p>More detail is available in the <a href="https://skrub-data.org/stable/CONTRIBUTING.html">contributing guide</a></p>
 <p>Start by creating a branch:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode numberSource sh number-lines code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href=""></a><span class="co"># fetch latest updates and start from the current head</span></span>
 <span id="cb27-2"><a href=""></a><span class="fu">git</span> fetch upstream</span>
-<span id="cb27-3"><a href=""></a><span class="fu">git</span> checkout <span class="at">-b</span> my-branch-name-eg-fix-issue-123</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb27-3"><a href=""></a><span class="co"># create a new branch and switch to it </span></span>
+<span id="cb27-4"><a href=""></a><span class="fu">git</span> checkout <span class="at">-b</span> my-branch-name-eg-fix-issue-123</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Make some changes, then:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode numberSource sh number-lines code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href=""></a><span class="fu">git</span> add ./the/file-i-changed</span>
 <span id="cb28-2"><a href=""></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"my message"</span></span>
 <span id="cb28-3"><a href=""></a><span class="fu">git</span> push <span class="at">--set-upstream</span> origin my-branch-name-eg-fix-issue-123</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>At this point, visit the GitHub PR page and open a PR from there: <code>https://github.com/skrub-data/skrub/pulls</code></p>
+<p>At this point, visit the <a href="https://github.com/skrub-data/skrub/pulls">GitHub PR page</a> and open a PR from there.</p>
+</section>
+<section id="about-upstream-and-on-avoiding-conflicts" class="slide level2 smaller">
+<h2>About <code>upstream</code> and on avoiding conflicts</h2>
+<p><code>upstream/main</code> is the “ground truth” for the repository. It is very important to keep up to date with <code>upstream/main</code> to avoid conflicts. This can be done by routinely <strong>merging</strong> your branch with <code>upstream/main</code>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode numberSource sh number-lines code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href=""></a><span class="co"># verify you're on your branch with </span></span>
+<span id="cb29-2"><a href=""></a><span class="fu">git</span> status</span>
+<span id="cb29-3"><a href=""></a><span class="co"># On branch my-branch-name</span></span>
+<span id="cb29-4"><a href=""></a><span class="co"># Your branch is up to date with 'origin/my-branch-name'.</span></span>
+<span id="cb29-5"><a href=""></a></span>
+<span id="cb29-6"><a href=""></a><span class="co"># fetch from upstream</span></span>
+<span id="cb29-7"><a href=""></a><span class="fu">git</span> fetch upstream</span>
+<span id="cb29-8"><a href=""></a></span>
+<span id="cb29-9"><a href=""></a><span class="co"># merge with upstream</span></span>
+<span id="cb29-10"><a href=""></a><span class="fu">git</span> merge upstream/main</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Important</strong></p>
+</div>
+<div class="callout-content">
+<p>Remember: you’re bringing information from <code>upstream/main</code> into <code>my-branch-name</code>, so you need to be inside <code>my-branch-name</code> and merge with <code>upstream/main</code>.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="code-formatting-and-pre-commit" class="slide level2 smaller">
 <h2>Code formatting and <code>pre-commit</code></h2>
-<p>Formatting is enforced though pre-commit checks.</p>
+<p>Skrub enforces some strict formatting rules to ensure code quality. This is done through <code>pre-commit</code> hooks. <code>pre-commit</code> must be installed, then it will run before every commit.</p>
 <div class="panel-tabset">
 <ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">From environment</a></li><li><a href="#tabset-4-2">Pixi</a></li></ul>
 <div class="tab-content">
 <div id="tabset-4-1">
 <ul>
-<li>Make sure <code>pre-commit</code> is installed in the environment and the folder</li>
+<li>Make sure <code>pre-commit</code> is installed in the current environment</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode numberSource sh number-lines code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href=""></a><span class="ex">pre-commit</span> install</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ul>
-<li>If missing, install it with <code>pip</code></li>
-</ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode numberSource sh number-lines code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href=""></a><span class="ex">pip</span> install pre-commit</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode numberSource sh number-lines code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href=""></a><span class="ex">pre-commit</span> install</span>
+<span id="cb30-2"><a href=""></a><span class="co"># install with pip if needed</span></span>
+<span id="cb30-3"><a href=""></a><span class="ex">pip</span> install pre-commit</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Then, add modified files and run pre-commit on them.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode numberSource sh number-lines code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href=""></a><span class="fu">git</span> add YOUR_FILE</span>
 <span id="cb31-2"><a href=""></a><span class="ex">pre-commit</span></span>
@@ -718,6 +726,22 @@ Riccardo Cappuzzo, Jérôme Dockès
 <span id="cb32-7"><a href=""></a><span class="co"># pre-commit will run again automatically</span></span>
 <span id="cb32-8"><a href=""></a><span class="co"># push the  commit</span></span>
 <span id="cb32-9"><a href=""></a><span class="fu">git</span> push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</section>
+<section id="code-formatting-and-pre-commit-1" class="slide level2 smaller">
+<h2>Code formatting and <code>pre-commit</code></h2>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>In some cases, pre-commit will prevent you from committing, but won’t be able to fix the problem on its own. In those cases, you will have to address the issue manually.</p>
 </div>
 </div>
 </div>

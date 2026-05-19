@@ -31,12 +31,10 @@ params:
 
 # What is skrub? 
 
-::: {.callout-tip}
 Skrub is a Python library that sits between data stored in dataframes and machine
 learning with scikit-learn. 
-:::
 
-Skrub eases machine learning with dataframes. 
+Skrub eases preprocessing and machine learning with dataframes. 
 
 ## {auto-animate="true" } 
 ![](/images/powerpuff_girls_1.png)
@@ -45,7 +43,7 @@ Skrub eases machine learning with dataframes.
 ![](/images/powerpuff_girls_2.png)
 
 ## Skrub compatibility
-- Skrub is mostly written in Python, but it inlcudes some Javascript
+- Skrub is mostly written in Python, but it includes some Javascript
 - Skrub is fully compatible with pandas and polars
     - Any feature needs to be supported by both libraries
 - Skrub transformers are fully compatible with scikit-learn
@@ -66,13 +64,6 @@ Main features:
 - Explore the distribution of values and find outliers
 - Discover highly correlated columns 
 - Export and share the report as an `HTML` file
-
-## `skrub.TableReport` {auto-animate="true"}
-
-- The report uses uses Jinjia templates and Javascript for interactivity
-- The backend is in Python
-- Space is limited, need to maximize information density. 
-- Lightweight, reliable > more features (no plotly)
 
 ## Data cleaning with pandas/polars: setup {.smaller auto-animate="true"}
 
@@ -138,14 +129,16 @@ table_vec = TableVectorizer()
 df_encoded = table_vec.fit_transform(df_pd)
 ```
 
-- Apply the `Cleaner` to all columns
-- Split columns by dtype and # of unique values
-- Encode each column separately
+The `TableVectorizer`:
+
+- Applies the `Cleaner` to all columns
+- Splits columns by dtype and # of unique values
+- Encodes each column according to its characteristics
 
 
 ## Encoding _all the features_: `TableVectorizer` {.smaller auto-animate="true"}
 
-![](images/skrub-table-vectorizer.png)
+![](/images/skrub-table-vectorizer.png)
 
 
 ## Build a predictive pipeline with `tabular_pipeline` {auto-animate="true" .smaller}
@@ -155,7 +148,7 @@ from sklearn.linear_model import Ridge
 model = skrub.tabular_pipeline(Ridge())
 ```
 
-![](images/skrub-tabular-pipeline-linear-model.png){fig-align="center"}
+![](/images/skrub-tabular-pipeline-linear-model.png){fig-align="center"}
 
 ## Encoding _all the features_: under the hood
 - `DatetimeEncoder`: convert datetimes to numerical columns (year, month, day ...)
@@ -163,19 +156,14 @@ model = skrub.tabular_pipeline(Ridge())
 - `StringEncoder`: quick, robust encoding of categorical and discrete features
 - `TextEncoder`: encode text and strings using pre-trained language models
 
-# Resources and contacts
+# Resources and contacts {.smaller}
 
-## Examples and guides
-- Skrub [example gallery](https://skrub-data.org/stable/auto_examples/data_ops/index.html)
-- Skrub [user guide](https://skrub-data.org/stable/documentation.html)
-- [Tutorial](https://github.com/skrub-data/EuroSciPy2025) on timeseries 
-forecasting at Euroscipy 2025
-##  Getting involved {.smaller}
+
 ::: {.nonincremental}
 Do you want to learn more? 
 
 - [Skrub website](https://skrub-data.org/stable/) 
-- [Skrub materials website](https://skrub-data.org/skrub-materials/index.html)
+- [Skrub materials website](https://skrub-data.org/skrub-materials/index.html) (for talks)
 - [Discord server](https://discord.gg/ABaPnm7fDC)
 
 Follow skrub on:
@@ -189,12 +177,10 @@ Star skrub on GitHub, or contribute directly:
 :::
 
 # Contributing to skrub: preparation
-Instructions are also available in the Installation page of the webiste:
-`https://skrub-data.org/stable/install.html`
+Instructions are also available in the [Installation page](https://skrub-data.org/stable/install.html)
 
 ## Setting up the repository {.smaller}
-First off, you need to fork the skrub repository:
-`https://github.com/skrub-data/skrub/fork`
+First off, you need to fork the skrub [repository](https://github.com/skrub-data/skrub/fork)
 
 Then, clone the repo on your local machine
 ```sh
@@ -207,6 +193,7 @@ Add the `upstream` remote to pull the latest version of skrub:
 git remote add upstream https://github.com/skrub-data/skrub.git
 ```
 You can check that the remote has been added with `git remote -v`.
+
 
 ## Setting up the environment {.smaller}
 Depends on the tools you use! 
@@ -259,7 +246,7 @@ pip install -e ".[dev]"
 
 
 ### pixi
-- Install pixi: `https://pixi.sh/latest/installation/`
+- Install pixi from the [pixi homepage](https://pixi.sh/latest/installation/)
 - Go to the skrub folder
 - Install an environment:
 ```sh
@@ -298,7 +285,7 @@ pytest --pyargs skrub
 ```
 
 ### With pixi
-Run all tests (you will be prompted to choose an env):
+Run all tests (you will be prompted to choose an env, you can pick dev):
 ```sh
 pixi run test
 ```
@@ -364,17 +351,23 @@ After rendering the docs, open the `doc/_build/html/index.html` file with a
 browser.
 
 ## Writing an example
-Full guide: `https://skrub-data.org/stable/tutorial_example.html`
+- Examples are python scripts placed in the `examples/` folder. 
+- The narrative of the examples should be written in comments and can include RST
+syntax. 
+- Before commmitting, the documentation should be built (at least in `quick` mode)
+to check that the example is being rendered correctly. 
+
+[Full guide](https://skrub-data.org/stable/tutorial_example.html)
 
 
 ## Opening a PR and contributing upstream {.smaller}
-More detail is available on the main website:
-`https://skrub-data.org/stable/CONTRIBUTING.html`
+More detail is available in the [contributing guide](https://skrub-data.org/stable/CONTRIBUTING.html)
 
 Start by creating a branch:
 ```sh
 # fetch latest updates and start from the current head
 git fetch upstream
+# create a new branch and switch to it 
 git checkout -b my-branch-name-eg-fix-issue-123
 ```
 
@@ -384,22 +377,51 @@ git add ./the/file-i-changed
 git commit -m "my message"
 git push --set-upstream origin my-branch-name-eg-fix-issue-123
 ```
-At this point, visit the GitHub PR page and open a PR from there:
-`https://github.com/skrub-data/skrub/pulls`
+At this point, visit the [GitHub PR page](https://github.com/skrub-data/skrub/pulls)
+and open a PR from there.
+
+## About `upstream` and on avoiding conflicts {.smaller}
+`upstream/main` is the "ground truth" for the repository. It is very important 
+to keep up to date with `upstream/main` to avoid conflicts. This can be done by
+routinely **merging** your branch with `upstream/main`.
+
+```sh
+# verify you're on your branch with 
+git status
+# On branch my-branch-name
+# Your branch is up to date with 'origin/my-branch-name'.
+
+# fetch from upstream
+git fetch upstream
+
+# merge with upstream
+git merge upstream/main
+```
+ 
+
+::: {.callout-important}
+
+Remember: you're bringing information from `upstream/main` into `my-branch-name`, 
+so you need to be inside `my-branch-name` and merge with `upstream/main`. 
+
+:::
+
+
 
 ## Code formatting and `pre-commit` {.smaller}
-Formatting is enforced though pre-commit checks.
+Skrub enforces some strict formatting rules to ensure code quality. This is done
+through `pre-commit` hooks. `pre-commit` must be installed, then it will run before
+every commit. 
 
 ::: {.panel-tabset}
 ### From environment
-- Make sure `pre-commit` is installed in the environment and the folder
+- Make sure `pre-commit` is installed in the current environment 
 ```sh
 pre-commit install
-```
-- If missing, install it with `pip`
-```sh
+# install with pip if needed
 pip install pre-commit
 ```
+
 Then, add modified files and run pre-commit on them. 
 
 ```sh
@@ -413,6 +435,8 @@ git commit -m "MY COMMIT MESSAGE"
 # push the  commit
 git push
 ```
+
+
 
 
 ### Pixi
@@ -429,6 +453,15 @@ git commit -m "MY COMMIT MESSAGE"
 # push the  commit
 git push
 ```
+:::
+
+## Code formatting and `pre-commit` {.smaller}
+::: {.callout-note}
+
+In some cases, pre-commit will prevent you from committing, but won't be able to 
+fix the problem on its own. In those cases, you will have to address the issue 
+manually. 
+
 :::
 
 
