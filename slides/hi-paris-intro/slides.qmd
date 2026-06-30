@@ -1,0 +1,59 @@
+---
+title: "Skrub - Machine learning with dataframes"
+title-block-banner: true
+date: 2026-07-01
+subtitle: ""
+author: "Riccardo Cappuzzo"
+institute: ""
+format: 
+    revealjs:
+        slide-number: c/t
+        show-slide-number: all
+        preview-links: auto
+        embed-resources: false
+        transition: slide
+        theme: simple
+        logo: images/skrub.svg
+        css: style.css
+        footer: "https://skrub-data.org/skrub-tutorials/"
+incremental: false
+params: 
+    version: "base"
+---
+
+## `whoami` {.smaller}
+
+::: {.incremental}
+
+- I am a research engineer at Inria, and I am the lead developer maintaining skrub ![](/images/inria.png){width=250}
+
+- I hold a PhD in Computer Science and Machine Learning from EURECOM and Sorbonne, 
+and I have been working on data cleaning and pre-processing since 2018
+
+- I did my PhD in Côte d'Azur, and I moved away because it was too sunny and 
+I don't like the sea ![](/images/nice.jpg){width=250}
+
+- Joke's on me because the hot weather followed me to Paris...
+
+- I'm Italian, but I don't drink coffee, wine, and I like pizza with fries ![](/images/raora.png){width=50}
+:::
+
+
+## https://skrub-data.org/skrub-tutorials
+![](images/qr-code-skrub-tutorials.png)
+
+## Structure of the tutorial
+- Two ways to follow the course: a book and a set of slide decks
+- The material is split in sections that contain two or more chapters
+- Each section ends with a and a coding exercise
+- We may not cover all the material today
+
+## How to run the exercises
+**Simplest way** : Use Jupyterlite (at the top)
+
+Otherwise: clone the repository, install the requirements with your favorite tool,
+then run the notebooks. 
+
+## Logistics
+- If I go too fast, stop me! 
+- Q&A time at the end of each chapter
