@@ -40,7 +40,7 @@ I don't like the sea ![](/images/nice.jpg){width=250}
 
 
 ## https://skrub-data.org/skrub-tutorials
-![](images/qr-code-skrub-tutorials.png)
+![](images/qr-code-skrub-tutorials.png){fig-align="center"}
 
 ## Structure of the tutorial
 - Two ways to follow the course: a book and a set of slide decks
